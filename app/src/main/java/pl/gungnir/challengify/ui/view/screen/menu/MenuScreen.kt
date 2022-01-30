@@ -14,22 +14,27 @@ import androidx.compose.material.icons.outlined.Person
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import pl.gungnir.challengify.ui.theme.ChallengifyTheme
+import pl.gungnir.challengify.ui.theme.Gray
 
 @Composable
 fun MenuScreen(
     modifier: Modifier = Modifier,
     widthContentSize: Dp
 ) {
+    val backgroundColor = Gray
+    val textColor = Color.White
+
     val width = widthContentSize - 15.dp
     ConstraintLayout(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.primary)
+            .background(backgroundColor)
             .padding(vertical = 80.dp)
     ) {
         val (topMenu, bottomMenu) = createRefs()
@@ -49,19 +54,19 @@ fun MenuScreen(
                     .padding(8.dp)
                     .border(
                         width = 4.dp,
-                        color = MaterialTheme.colors.onPrimary,
+                        color = textColor,
                         shape = CircleShape
                     ),
                 imageVector = Icons.Outlined.Person,
                 contentDescription = "zdjęcie użytkownika",
-                tint = MaterialTheme.colors.onPrimary
+                tint = textColor
             )
 
             Spacer(modifier = Modifier.height(48.dp))
 
             Text(
                 text = "Pole 1",
-                color = MaterialTheme.colors.onPrimary,
+                color = textColor,
                 style = MaterialTheme.typography.body2,
             )
 
@@ -69,7 +74,7 @@ fun MenuScreen(
 
             Text(
                 text = "Pole 2",
-                color = MaterialTheme.colors.onPrimary,
+                color = textColor,
                 style = MaterialTheme.typography.body2,
             )
 
@@ -77,13 +82,13 @@ fun MenuScreen(
 
             Text(
                 text = "Pole 3",
-                color = MaterialTheme.colors.onPrimary,
+                color = textColor,
                 style = MaterialTheme.typography.body2,
             )
         }
         Text(
             text = "Wyloguj",
-            color = MaterialTheme.colors.onPrimary,
+            color = textColor,
             style = MaterialTheme.typography.body2,
             modifier = Modifier
                 .constrainAs(bottomMenu) {
