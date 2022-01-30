@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
                 animationSpec = tween(durationMillis = animationDuration)
             )
 
-            ChallengifyTheme(darkTheme = true) {
+            ChallengifyTheme {
                 Box(modifier = Modifier.fillMaxSize()) {
 
                     MenuScreen(widthContentSize = 250.dp)
